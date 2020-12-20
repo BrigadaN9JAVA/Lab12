@@ -1,0 +1,57 @@
+package Lab12;
+
+import java.util.*;
+
+public class Video {
+    private String nameVideo;
+    private String url;
+    private int views;
+    private int like;
+    private int dislike;
+    private HashSet<Comment> comment = new HashSet<>();
+
+    public Video(String nameVideo, String url, int views, int like, int dislike) {
+        this.nameVideo = nameVideo;
+        this.url = url;
+        this.views = views;
+        this.like = like;
+        this.dislike = dislike;
+    }
+
+    public void addComment(Comment comment1){
+        comment.add(comment1);
+
+    }
+
+    public void print(){
+        System.out.println("Назва відео: " + getNameVideo() + "; Силка на відео: " + getUrl() + "; Кількість переглялів: "
+                + getViews() + "; Кількість лайків: " + getLike() + "; Кількість діслайків: " + getDislike());
+        for(Comment comment: getComment()){
+            System.out.println(comment);
+        }
+    }
+
+    public String getNameVideo() {
+        return nameVideo;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public int getLike() {
+        return like;
+    }
+
+    public int getDislike() {
+        return dislike;
+    }
+
+    public HashSet<Comment> getComment() {
+        return comment;
+    }
+}
